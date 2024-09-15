@@ -1,0 +1,1 @@
+# Write a program to insert 10 nodes at both the beginning and end of a singly linked list. After all insertions, traverse the list and count the total number of nodes.
