@@ -31,9 +31,22 @@ class LinkedList:
             n.ref = new_node
             # new_node =  None
 
+    def delete_first(self):
+        count = 0
+        n = self.head
+        if n is None:
+            print('The list is empty')
+        else:
+            # while n is not None:
+            n = n.ref
+            print(n.data, '-->', end='')
+
 n = LinkedList()
-n.add_end(40)
+# n.add_end(40)
 n.add_begin(50)
+n.add_begin(20)
+n.add_begin(10)
 # n.add_end(100)
-# n.add_begin(60)
+n.add_begin(60)
+n.delete_first()
 n.print_LL()
