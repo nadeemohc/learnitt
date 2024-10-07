@@ -21,6 +21,26 @@ class LL:
         new_node.ref = self.head
         self.head = new_node
 
+    def add_before(self, data, x):
+        n = self.head
+        new_node = Node(data)
+        if n is None:
+            print('The list is empty')
+            return
+        if self.head.data == x:
+            new_node.ref = self.head
+            self.head = new_node
+        while n.ref is not None:
+            if x == n.ref.data:
+                break
+            n = n.ref
+        if n.ref is None:
+            print("The searching element is not present")
+        else:
+            new_node.ref = n.ref
+            n.ref = new_node
+
+
     def delete_last(self):
         n = self.head
         if n is None:
@@ -34,8 +54,9 @@ class LL:
 
 n = LL()
 n.add_begin(23)
-# n.add_begin(12)
-# n.add_begin(456)
-# n.add_begin(443)
-n.delete_last()
+n.add_begin(12)
+n.add_before(340, 12)
+n.add_begin(456)
+n.add_begin(443)
+# n.delete_last()
 n.printLL()
