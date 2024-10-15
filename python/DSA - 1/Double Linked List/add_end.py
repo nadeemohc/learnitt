@@ -24,7 +24,6 @@ class DoublyLinkedList:
         if self.head is None:
             self.head = new_node
         else:
-            n = self.head
             while n.next is not None:
                 n = n.next
             n.next = new_node
