@@ -1,11 +1,13 @@
-list1 = [21,3,1,5,4,6,8,5]
-print(f'The unsorted list is: {list1}')
-for i in range(len(list1)):
-    min_val = i
-    for j in range(i+1, len(list1)):
-        if list1[j] > list1[min_val]:
-            min_val = j
-    if list1[i] != list1[min_val]:
-        list1[i], list1[min_val] = list1[min_val], list1[i]
+def insertion_sort(arr):
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i - 1
+        while j >= 0 and key < arr[j]:
+            arr[j + 1] = arr[j]
+            j -= 1
+        arr[j + 1] = key  
+    return arr
 
-print(f'The sorted list is: {list1}')
+
+arr = [12, 11, 13, 5, 6]
+print("Sorted array:", insertion_sort(arr))
